@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  build-xroad:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: build-xroad
+    restart: unless-stopped

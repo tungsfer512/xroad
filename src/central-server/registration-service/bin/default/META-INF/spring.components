@@ -1,0 +1,8 @@
+org.niis.xroad.cs.registrationservice.Main=org.springframework.stereotype.Component,org.springframework.boot.SpringBootConfiguration
+org.niis.xroad.cs.registrationservice.config.RegistrationServiceConfiguration=org.springframework.stereotype.Component
+org.niis.xroad.cs.registrationservice.config.RegistrationServiceProperties=org.springframework.stereotype.Component,org.springframework.boot.context.properties.ConfigurationProperties
+org.niis.xroad.cs.registrationservice.config.TraceIdFilter=org.springframework.stereotype.Component
+org.niis.xroad.cs.registrationservice.config.WebServerCustomizer=org.springframework.stereotype.Component
+org.niis.xroad.cs.registrationservice.controller.RegistrationRequestController=org.springframework.stereotype.Component
+org.niis.xroad.cs.registrationservice.service.AdminApiServiceImpl=org.springframework.stereotype.Component
+org.niis.xroad.cs.registrationservice.service.GlobalConfUpdater=org.springframework.stereotype.Component

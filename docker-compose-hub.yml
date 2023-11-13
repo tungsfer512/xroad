@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+  cs-1:
+    image: niis/xroad-central-server:jammy-7.3.2
+    container_name: cs-1
+    ports:
+      - 4000:4000
+      - 4001:4001
+      - 4002:4002
+      - 4400:4400
+      - 80:80
+      - 9998:9998
+      - 8888:8888
+      - 8899:8899
+    volumes:
+      - ./centralserver/build/home/ca/CA/cert:/home/ca/CA/certs:rw
+    restart: unless-stopped
+    networks:
+      x-road:
+        null
+
+  ss-1:
+    image: niis/xroad-security-server:jammy-7.3.2
+    container_name: ss-1
+    environment:
+      - XROAD_TOKEN_PIN=1234
+    ports:
+      - 4004:4000
+      - 8080:8080
+      - 5500:5500
+      - 5577:5577
+      - 2080:2080
+    volumes:
+      - ./hub_certs:/home/ca/CA/certs:rw
+    restart: unless-stopped
+    networks:
+      x-road:
+        null
+
+networks:
+  x-road:
+    driver: bridge
